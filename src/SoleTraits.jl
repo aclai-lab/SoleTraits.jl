@@ -26,9 +26,9 @@ const Traits = [
     # :is_dimensional,
 
     # Logic traits
-    # :is_proposition,
-    # :is_unary_operator,
-    # :is_binary_operator,
+    :is_proposition,
+    :is_unary_operator,
+    :is_binary_operator,
     # :is_formula,
 
     # Utils
@@ -46,6 +46,10 @@ is_semisupervised(::Type)   = false
 
 is_univariate(::Type)       = false
 is_multivariate(::Type)     = false
+
+is_proposition(::Type)      = false
+is_unary_operator(::Type)   = false
+is_binary_operator(::Type)  = false
 
 ## MAKE TRAITS ACT ON INSTANCES AS WELL AS TYPES (from MLJ)
 for t in Traits
