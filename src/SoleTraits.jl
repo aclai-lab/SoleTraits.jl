@@ -57,7 +57,7 @@ for t in Traits
 end
 
 # Not really traits (from MLJ)
-hyperparamenters(T::Type)       = fieldnames(T)
+hyperparameters(T::Type)       = fieldnames(T)
 hyperparameters_types(T::Type)  = string.(fieldtypes(T))
 
 end
