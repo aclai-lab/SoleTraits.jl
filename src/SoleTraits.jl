@@ -31,6 +31,10 @@ const Traits = [
     :is_binary_operator,
     # :is_formula,
 
+    :is_modal_operator,
+    :is_existential_modal_operator,
+    :is_universal_modal_operator,
+
     # Utils
     :hyperparameters,
     :hyperparameters_types,
@@ -50,6 +54,10 @@ is_multivariate(::Type)     = false
 is_proposition(::Type)      = false
 is_unary_operator(::Type)   = false
 is_binary_operator(::Type)  = false
+
+is_modal_operator(::Type)             = false
+is_existential_modal_operator(::Type) = false
+is_universal_modal_operator(::Type)   = false
 
 ## MAKE TRAITS ACT ON INSTANCES AS WELL AS TYPES (from MLJ)
 for t in Traits
