@@ -29,6 +29,7 @@ const Traits = [
     :is_proposition,
     :is_unary_operator,
     :is_binary_operator,
+    :is_commutative,
     # :is_formula,
 
     :is_modal_operator,
@@ -54,6 +55,7 @@ is_multivariate(::Type)     = false
 is_proposition(::Type)      = false
 is_unary_operator(::Type)   = false
 is_binary_operator(::Type)  = false
+is_commutative(::Type)      = false
 
 is_modal_operator(::Type)             = false
 is_existential_modal_operator(::Type) = false
