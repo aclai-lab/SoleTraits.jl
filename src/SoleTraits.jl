@@ -45,21 +45,9 @@ for t in Traits
     @eval(export $t)
 end
 
-is_supervised(::Type)       = false
-is_unsupervised(::Type)     = false
-is_semisupervised(::Type)   = false
-
-is_univariate(::Type)       = false
-is_multivariate(::Type)     = false
-
-is_proposition(::Type)      = false
-is_unary_operator(::Type)   = false
-is_binary_operator(::Type)  = false
-is_commutative(::Type)      = false
-
-is_modal_operator(::Type)             = false
-is_existential_modal_operator(::Type) = false
-is_universal_modal_operator(::Type)   = false
+for t in Traits
+    @eval($t(::Type) = false)
+end
 
 ## MAKE TRAITS ACT ON INSTANCES AS WELL AS TYPES (from MLJ)
 for t in Traits
